@@ -43,23 +43,36 @@ async function seeCurrentUser() {
 }
 
 // Logout
-function logout() {
-  console.log("Logaut")
+async function logout() {
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.log(error);
+  } 
+  else{
+    console.log("logout")
+  }
 }
+
+
+// Get User
+
+
 
 </script>
 
 <template>
+  
   <div class="w-full max-w-xs ml-[30%] pt-5">
-    <form class="bg-blue-400 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form  class="bg-blue-400 shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
          Correo
         </label>
         <input v-model="email"
           class="shadow appearance-none border hover:border-blue-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="email" type="text" placeholder="Correo">
+          id="email" type="email" placeholder="Correo">
       </div>
+      
       <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
           Contraseña
