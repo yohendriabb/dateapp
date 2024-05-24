@@ -17,6 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
             <a href="tel:5541251234" class="text-sm  text-gray-500 dark:text-white hover:underline">0257-2516170/ 2512667</a>
             <RouterLink :to="{'name':'login'}" class="text-sm bg-cyan-400 rounded-full px-4 py-2 text-gray-950  hover:text-cyan-300 ">Login</RouterLink>
             <RouterLink :to="{'name':'register'}" class="text-sm bg-cyan-400 rounded-full px-4 py-2 text-gray-950  hover:text-cyan-300 ">Register</RouterLink>
+            <RouterLink :to="{'name':'account'}" class="text-sm bg-cyan-400 rounded-full px-4 py-2 text-gray-950  hover:text-cyan-300 ">Account</RouterLink>
         </div>
     </div>
 </nav>

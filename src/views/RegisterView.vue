@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import supabase  from '../supabase';
+import router from '../router/index';
+
 // connect input's
 let email = ref('');
 let password = ref('');
@@ -25,12 +27,15 @@ async function createUser () {
     }
    })
    if ( error ) {
-    console.log(error)
+    console.log(error);
+    router.push('/')
    }
    else {
     console.log(data)
    }
-}
+};
+
+
 </script>
 
 <template>

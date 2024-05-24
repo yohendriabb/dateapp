@@ -1,8 +1,15 @@
 <script setup>
+import { ref } from 'vue';
+import supabase  from '../supabase';
+
+async function getUser () {
+  const { data: { user }, error } = await supabase.auth.getUser()
+  }
 
 </script>
 
 <template>
+    <div v-for="user in getUser" key="id" >{{ users }}</div>
     <section class="items-center mt-3 mb-3 bg-no-repeat bg-[url('/src/assets/img/05.jpeg')] bg-gray-700 bg-blend-multiply">
         <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
